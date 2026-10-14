@@ -74,9 +74,10 @@
         .card-back {
             transform: rotateY(180deg);
             background: linear-gradient(145deg, #65ddeb, #4bc2cf);
-            justify-content: center;
+            justify-content: safe center;
             align-items: center;
-            padding: 2rem;
+            padding: 1.5rem 1.25rem;
+            overflow-y: auto;
         }
 
         .btn-custom {
@@ -168,19 +169,27 @@
 
             <!-- Back of Card (QR Code) -->
             <div class="card-back">
-                <div class="bg-white p-8 rounded-3xl shadow-2xl flex flex-col items-center w-full max-w-[300px]">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Scan to Save</h2>
-                    <p class="text-gray-500 text-sm mb-6 text-center">Point your camera at this code to get my number directly.</p>
-                    
-                    <!-- QR Code with +1 format so iPhone dials correctly -->
-                    <div class="p-2 border-4 border-secondary rounded-2xl mb-6 bg-white">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=tel:%2B19258121424&margin=10" alt="QR Code to Call 925-812-1424" class="w-48 h-48">
+                <!-- Instagram QR (top) -->
+                <div class="bg-white px-5 py-4 rounded-3xl shadow-2xl flex flex-col items-center w-full max-w-[300px]">
+                    <h2 class="text-xl font-bold text-gray-800 mb-1"><i class="fa-brands fa-instagram text-primary"></i> Scan for Instagram</h2>
+                    <p class="text-gray-500 text-sm mb-3 text-center">Point your camera here to follow me.</p>
+                    <div class="p-1 border-4 border-secondary rounded-2xl mb-2 bg-white">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fwww.instagram.com%2Faleksanderreid%2F&margin=10" alt="QR Code for Aleksander Reid's Instagram, @aleksanderreid" class="w-36 h-36">
                     </div>
-                    
-                    <p class="font-bold text-lg text-gray-800 tracking-wider">925-812-1424</p>
+                    <p class="font-bold text-base text-gray-800">@aleksanderreid</p>
                 </div>
-                
-                <button onclick="flipCard()" class="mt-8 px-8 py-3 bg-gray-900 text-white font-bold rounded-full shadow-lg flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors">
+
+                <!-- Phone QR (bottom) - +1 format so iPhone dials correctly -->
+                <div class="bg-white px-5 py-4 rounded-3xl shadow-2xl flex flex-col items-center w-full max-w-[300px] mt-4">
+                    <h2 class="text-xl font-bold text-gray-800 mb-1"><i class="fa-solid fa-phone text-primary"></i> Scan for Phone Number</h2>
+                    <p class="text-gray-500 text-sm mb-3 text-center">Point your camera here to call me.</p>
+                    <div class="p-1 border-4 border-secondary rounded-2xl mb-2 bg-white">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=tel:%2B19258121424&margin=10" alt="QR Code to Call 925-812-1424" class="w-36 h-36">
+                    </div>
+                    <p class="font-bold text-base text-gray-800 tracking-wider">925-812-1424</p>
+                </div>
+
+                <button onclick="flipCard()" class="mt-5 px-8 py-3 bg-gray-900 text-white font-bold rounded-full shadow-lg flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors">
                     <i class="fa-solid fa-rotate-left"></i>
                     Back to Profile
                 </button>
